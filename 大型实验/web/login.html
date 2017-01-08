@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<style type="text/css">
+    #body{
+        background-image: url("/upload/bg_login.jpg");
+    }
+    #top{
+        height: 150px;
+    }
+    #left{
+        float:left;width: 800px;height: 300px;
+    }
+    #login{
+        float: left;
+        height: 300px;
+        width: 400px;
+        background-color: white;
+        align-content: center;
+    }
+    .u_logo{
+        background: url("upload/username.png") no-repeat;
+        padding: 10px 10px;
+        position: absolute;
+        top: 43px;
+        left: 40px;
+
+    }
+    .p_logo{
+        background: url("upload/password.png") no-repeat;
+        padding: 10px 10px;
+        position: absolute;
+        top: 12px;
+        left: 40px;
+    }
+    #code{
+        border: 1px solid #d3d3d3;
+        padding: 10px 10px;
+        width: 200px;
+        border-radius: 4px;
+        padding-left: 35px;
+        margin-left: -20px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s
+    }
+    .ipt{
+        border: 1px solid #d3d3d3;
+        padding: 10px 10px;
+        width: 290px;
+        border-radius: 4px;
+        padding-left: 35px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s
+    }
+    .ipt:focus{
+        border-color: #66afe9;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>登录界面</title>
+    <script type="text/javascript">
+        function loginCheck() {
+            var username = document.getElementById("username");
+            var password = document.getElementById("password");
+//            var id="<%=session.getAttribute(\"rCode\")%>";
+//            var code=document.getElementById("code");
+            if (username.value == "") {
+                alert("用户名不能为空!");
+                return false;
+            } else if (password.value == "") {
+                alert("密码不能为空！");
+                return false;
+            }
+//            }else if(code.value!=id.value){
+//                alert(id);
+//                alert("验证码输入有误");
+//                return false;
+//            }
+        }
+    </script>
+</head>
+<body id="body">
+     <div id="top"></div>
+     <div id="left">
+         <img src="/upload/welcome.png" height="174px" width="308px" style="margin-left: 200px;margin-top: 50px">
+     </div>
+     <div id="login" align="center">
+         <div><h3>登录验证</h3></div>
+         <form action="login.do" method="post" onSubmit="return loginCheck()">
+             <p style="padding: 30px 0 10px;position: relative">
+                 <span class="u_logo"></span><input type="text" name="username" value="" class="ipt" id="username" placeholder="用户名">
+             </p>
+             <p style="position: relative">
+                 <span class="p_logo"></span><input type="password" name="password" value="" class="ipt" id="password" placeholder="密码">
+             </p>
+             <p>
+                 <input type="text" name="rCode" placeholder="验证码" id="code">
+                 <img src="number.jsp">
+             </p>
+             <input type="submit" value="登录" style="width :300px;height:30px;background-color: rgb(134,206,47);color: white">
+         </form>
+     </div>
+</body>
+</html>
