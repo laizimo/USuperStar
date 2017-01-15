@@ -53,6 +53,27 @@
             padding: 10px 0px 10px;
         }
     </style>
+    <script type="text/javascript">
+        function inputCheck() {
+            var bookname=document.getElementById("book_name");
+            var booktel=document.getElementById("book_tel");
+            var bookroom=document.getElementById("book_room");
+            if(bookname.value.length>8){
+                alert("名字输入不规范！");
+                return false;
+            }else if(booktel.value.length!=11){
+                alert("电话号码位数不对！");
+                return false;
+            }else if(bookroom.value.length>3){
+                alert("请输入正确的房间号！");
+                return false;
+            }else if(bookname.value==""||booktel.value==""||bookroom.value==""){
+                alert("输入数据不能为空");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 <body>
 <div id="top_div"></div>
@@ -61,11 +82,11 @@
         <h1>客人预订信息</h1>
     </div>
     <div align="center">
-        <form action="input_book.jsp" method="post" accept-charset="UTF-8">
-            <p><input type="text" name="book_name" class="ipt" placeholder="姓名"></p>
-            <p><input type="text" name="book_tel" class="ipt" placeholder="电话"></p>
-            <p><input type="text" name="book_room" class="ipt" placeholder="预订房间号"></p>
-            <p><input type="date" name="book_time" class="ipt" placeholder="预订时间"></p>
+        <form action="input_book.jsp" method="post" accept-charset="UTF-8" onsubmit="return inputCheck()">
+            <p><input type="text" name="book_name" class="ipt" placeholder="姓名" id="book_name"></p>
+            <p><input type="text" name="book_tel" class="ipt" placeholder="电话" id="book_tel"></p>
+            <p><input type="text" name="book_room" class="ipt" placeholder="预订房间号" id="book_room"></p>
+            <p><input type="date" name="book_time" class="ipt" placeholder="预订时间" id="booktime"></p>
             <input type="submit" value="提交" style="bottom: 10px;border-radius: 4px;border-color: rgb(199,199,199);width: 350px;margin: 0px auto auto">
         </form>
     </div>

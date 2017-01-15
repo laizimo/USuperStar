@@ -110,6 +110,19 @@
             top: -21px;
             left: 210px;
         }
+        #code{
+            border: 1px solid #d3d3d3;
+            padding: 10px 10px;
+            width: 200px;
+            border-radius: 4px;
+            padding-left: 35px;
+            margin-left: -22px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s
+        }
 
     </STYLE>
 
@@ -157,7 +170,11 @@
     <P style="position: relative;"><SPAN class="p_logo"></SPAN>
         <INPUT class="ipt" id="password" type="password" placeholder="密码" name="password" value="">
     </P>
-    <DIV style="height: 50px; line-height: 50px; margin-top: 30px; border-top-color: rgb(231, 231, 231); border-top-width: 1px; border-top-style: solid;">
+        <p style="padding:10px 0px 0px ">
+            <input type="text" name="rCode" placeholder="验证码" id="code">
+            <img src="number.jsp">
+        </p>
+    <DIV style="height: 50px; line-height: 50px; border-top-color: rgb(231, 231, 231); border-top-width: 1px; border-top-style: solid;">
         <P style="margin: 0px 35px 20px 45px;"><SPAN style="float: left;"><A style="color: rgb(204, 204, 204);"
                                                                              href="#">忘记密码?</A></SPAN>
             <SPAN style="float: right;"><A style="color: rgb(204, 204, 204); margin-right: 10px;"

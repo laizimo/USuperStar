@@ -1,6 +1,7 @@
 package webdemo;
 
 import demo.Customer;
+import demo.DB;
 import demo.OpenDB;
 import demo.Waiter;
 
@@ -29,33 +30,15 @@ public class CustomerServlet extends HttpServlet {
         String Csex=new String(request.getParameter("Csex").getBytes("ISO-8859-1"),"UTF-8");
         String Croom=request.getParameter("Croom");
         String Ctime=request.getParameter("Ctime");
-        //Waiter waiter=new Waiter();
-        OpenDB mydb=new OpenDB();
+        DB mydb=new DB();
         int count=-1;
         try {
-            /*SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
-            Date Ctime=simpleDateFormat.parse(request.getParameter("Ctime"));
-            Customer customer=new Customer(Cname,Cmycard,Ctel,Csex,Croom,Ctime);
-*/
-            /*OpenDB myDB=new OpenDB();
-            int count = 0;
-            String sql="INSERT INTO tb_cust VALUES(?,?,?,?,?,?)";
-            Object[] params={
-                    customer.getCname(),customer.getCmycard(),customer.getCtel(),customer.getCsex(),customer.getCroom(),customer.getCtime()
-            };
-            count=myDB.OpUpdate(sql);*/
             String sql = "INSERT INTO tb_cust VALUES('"+Cname+"','"+Cmycard+"','"+Csex+"','"+Ctel+"','"+Croom+"','"+Ctime+"')";
-            count=mydb.OpUpdate(sql);
+            mydb.doUpdate(sql);
             sql="Update tb_room set isCheck=true where room_id='"+Croom+"'";
-            mydb.OpUpdate(sql);
-            if(count!=-1){
-                RequestDispatcher re=request.getRequestDispatcher("/success_reg.jsp");
-                re.forward(request,response);
-            }
-            else{
-                RequestDispatcher re=request.getRequestDispatcher("/false_reg.jsp");
-                re.forward(request,response);
-            }
+            mydb.doUpdate(sql);
+            RequestDispatcher re=request.getRequestDispatcher("/success_reg.jsp");
+            re.forward(request,response);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {

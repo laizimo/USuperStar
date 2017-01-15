@@ -78,7 +78,7 @@
 <%}%>
 <a href="adminManager.jsp?PageRoom=<%=CountroomPage%>">最后一页</a>
 <%
-    out.print("</div></body></html>");
+    out.print("</body></html>");
 %>
 
 </body>

@@ -21,6 +21,7 @@ public class DB {
         Class.forName(className).newInstance();
         conn=DriverManager.getConnection(url);
         pstm=conn.createStatement();
+        pstm.executeUpdate(sql);
     }
 
     public ResultSet getRs() throws SQLException{

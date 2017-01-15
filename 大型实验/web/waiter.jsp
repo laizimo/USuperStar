@@ -60,6 +60,7 @@
          <jsp:include page="RoomMessage.jsp?Page=<%=CurrPage%>"/>
          </div>
          <a href="inputCustomer.jsp"><input type="button" value="登记住客信息"></a>
+         <a href="displayCust.jsp"><input type="button" value="顾客信息"></a>
          <a href="book.jsp"><input type="button" value="房间预订信息"></a>
          <a href="CheckOut.jsp"><input type="button" value="结账"></a>
      </div>

@@ -71,8 +71,6 @@
         function loginCheck() {
             var username = document.getElementById("username");
             var password = document.getElementById("password");
-//            var id="<%=session.getAttribute(\"rCode\")%>";
-//            var code=document.getElementById("code");
             if (username.value == "") {
                 alert("用户名不能为空!");
                 return false;
@@ -80,11 +78,6 @@
                 alert("密码不能为空！");
                 return false;
             }
-//            }else if(code.value!=id.value){
-//                alert(id);
-//                alert("验证码输入有误");
-//                return false;
-//            }
         }
     </script>
 </head>

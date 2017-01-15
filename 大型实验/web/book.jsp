@@ -51,10 +51,11 @@
 </div>
 <div id="content">
     <div style="height: 100px;width: 100%"></div>
-    <div style="background: rgb(255, 255, 255); margin: 0px auto auto; border: 1px solid rgb(231, 231, 231); border-image: none; width: 400px; height: 210px; text-align: center;">
+    <div style="background: rgb(255, 255, 255); margin: 0px auto auto; border: 1px solid rgb(231, 231, 231); border-image: none; width: 400px; height: 270px; text-align: center;">
         <div>
             <jsp:include page="BookMessage.jsp?Page=<%=CurrPage%>"/>
         </div>
+        <a href="waiter.jsp">返回首页</a>
     </div>
 </div>
 </body>

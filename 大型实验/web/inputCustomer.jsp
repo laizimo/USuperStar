@@ -51,6 +51,32 @@
             padding: 10px 0px 10px;
         }
     </style>
+    <script>
+        function inputCheck() {
+            var custName=document.getElementById("name");
+            var custCard=document.getElementById("card");
+            var custTel=document.getElementById("tel");
+            var custSex=document.getElementById("sex");
+            var custRoom=document.getElementById("room");
+            if(custName.value.length>8){
+                alert("名字过长！");
+                return false;
+            }else if(custCard.value.length!=18){
+                alert("身份证位数不对！");
+                return false;
+            }else if(custTel.value.length!=11){
+                alert("电话号码输入不正确！");
+                return false;
+            }else if(custSex.value!="男"||custSex.value!="女"){
+                alert("性别输入不正确！");
+                return false;
+            }else if(custRoom.value.length!=3){
+                alert("房间号输入不正确！");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 <body>
 <div id="top_div"></div>
@@ -60,11 +86,11 @@
     </div>
     <div align="center">
         <form action="inputCust.do" method="post" accept-charset="UTF-8">
-            <p><input type="text" name="Cname" class="ipt" placeholder="姓名"></p>
-            <p><input type="text" name="Cmycard" class="ipt" placeholder="身份证"></p>
-            <p><input type="text" name="Ctel" class="ipt" placeholder="电话"></p>
-            <p><input type="text" name="Csex" class="ipt" placeholder="性别"></p>
-            <p><input type="text" name="Croom" class="ipt" placeholder="入住房间号"></p>
+            <p><input type="text" name="Cname" class="ipt" placeholder="姓名" id="name"></p>
+            <p><input type="text" name="Cmycard" class="ipt" placeholder="身份证" id="card"></p>
+            <p><input type="text" name="Ctel" class="ipt" placeholder="电话" id="tel"></p>
+            <p><input type="text" name="Csex" class="ipt" placeholder="性别" id="sex"></p>
+            <p><input type="text" name="Croom" class="ipt" placeholder="入住房间号" id="room"></p>
             <p><input type="date" name="Ctime" class="ipt" placeholder="入住时间"></p>
             <input type="submit" value="提交" style="bottom: 10px;border-radius: 4px;border-color: rgb(199,199,199);width: 350px;margin: 0px auto auto">
         </form>
